@@ -1,0 +1,191 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny85-20PU U?
+U 1 1 5F084A5E
+P 2450 2200
+F 0 "U?" H 1921 2246 50  0000 R CNN
+F 1 "ATtiny85-20PU" H 1921 2155 50  0000 R CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 2450 2200 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 2450 2200 50  0001 C CNN
+	1    2450 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5F085DF6
+P 5400 1800
+F 0 "D?" V 5439 1683 50  0000 R CNN
+F 1 "LED" V 5348 1683 50  0000 R CNN
+F 2 "" H 5400 1800 50  0001 C CNN
+F 3 "~" H 5400 1800 50  0001 C CNN
+	1    5400 1800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:Buzzer BZ?
+U 1 1 5F086931
+P 4100 2500
+F 0 "BZ?" H 4252 2529 50  0000 L CNN
+F 1 "Buzzer" H 4252 2438 50  0000 L CNN
+F 2 "" V 4075 2600 50  0001 C CNN
+F 3 "~" V 4075 2600 50  0001 C CNN
+	1    4100 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5F087406
+P 2750 1450
+F 0 "C?" H 2842 1496 50  0000 L CNN
+F 1 "C_Small" H 2842 1405 50  0000 L CNN
+F 2 "" H 2750 1450 50  0001 C CNN
+F 3 "~" H 2750 1450 50  0001 C CNN
+	1    2750 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5F089F2B
+P 4700 2150
+F 0 "R?" H 4600 2100 50  0000 C CNN
+F 1 "R_Small" H 4500 2200 50  0000 C CNN
+F 2 "" H 4700 2150 50  0001 C CNN
+F 3 "~" H 4700 2150 50  0001 C CNN
+	1    4700 2150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D_Photo_ALT D?
+U 1 1 5F0975F2
+P 4700 1750
+F 0 "D?" V 4696 1672 50  0000 R CNN
+F 1 "D_Photo_ALT" V 4605 1672 50  0000 R CNN
+F 2 "" H 4650 1750 50  0001 C CNN
+F 3 "~" H 4650 1750 50  0001 C CNN
+	1    4700 1750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5400 1650 4700 1650
+$Comp
+L Device:R_Small R?
+U 1 1 5F09C15F
+P 5400 2150
+F 0 "R?" H 5300 2100 50  0000 C CNN
+F 1 "R_Small" H 5200 2200 50  0000 C CNN
+F 2 "" H 5400 2150 50  0001 C CNN
+F 3 "~" H 5400 2150 50  0001 C CNN
+	1    5400 2150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4700 1950 4700 2000
+Connection ~ 4700 2000
+Wire Wire Line
+	4700 2000 4700 2050
+Connection ~ 4700 1650
+Wire Wire Line
+	5400 2050 5400 1950
+Wire Wire Line
+	4350 1900 4350 1650
+Wire Wire Line
+	4350 1650 4700 1650
+Wire Wire Line
+	4000 2400 4000 2300
+Wire Wire Line
+	4000 2300 3050 2300
+Wire Wire Line
+	3050 1900 4350 1900
+Wire Wire Line
+	4450 2000 4450 2200
+Wire Wire Line
+	4450 2200 3050 2200
+Wire Wire Line
+	4450 2000 4700 2000
+$Comp
+L Device:R_Small R?
+U 1 1 5F0A9E8A
+P 3300 2400
+F 0 "R?" H 3200 2350 50  0000 C CNN
+F 1 "R_Small" H 3100 2450 50  0000 C CNN
+F 2 "" H 3300 2400 50  0001 C CNN
+F 3 "~" H 3300 2400 50  0001 C CNN
+	1    3300 2400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3200 2400 3050 2400
+Wire Wire Line
+	2750 1350 2450 1350
+Wire Wire Line
+	2450 1350 2450 1600
+$Comp
+L power:GND #PWR?
+U 1 1 5F0AADF8
+P 2750 1550
+F 0 "#PWR?" H 2750 1300 50  0001 C CNN
+F 1 "GND" H 2755 1377 50  0001 C CNN
+F 2 "" H 2750 1550 50  0001 C CNN
+F 3 "" H 2750 1550 50  0001 C CNN
+	1    2750 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F0AC6A3
+P 2450 2800
+F 0 "#PWR?" H 2450 2550 50  0001 C CNN
+F 1 "GND" H 2455 2627 50  0001 C CNN
+F 2 "" H 2450 2800 50  0001 C CNN
+F 3 "" H 2450 2800 50  0001 C CNN
+	1    2450 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F0AC9FE
+P 4000 2600
+F 0 "#PWR?" H 4000 2350 50  0001 C CNN
+F 1 "GND" H 4005 2427 50  0001 C CNN
+F 2 "" H 4000 2600 50  0001 C CNN
+F 3 "" H 4000 2600 50  0001 C CNN
+	1    4000 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F0ACD4E
+P 4700 2250
+F 0 "#PWR?" H 4700 2000 50  0001 C CNN
+F 1 "GND" H 4705 2077 50  0001 C CNN
+F 2 "" H 4700 2250 50  0001 C CNN
+F 3 "" H 4700 2250 50  0001 C CNN
+	1    4700 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F0ACFE1
+P 5400 2250
+F 0 "#PWR?" H 5400 2000 50  0001 C CNN
+F 1 "GND" H 5405 2077 50  0001 C CNN
+F 2 "" H 5400 2250 50  0001 C CNN
+F 3 "" H 5400 2250 50  0001 C CNN
+	1    5400 2250
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
