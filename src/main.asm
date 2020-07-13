@@ -53,27 +53,15 @@ detect_again:
 	rjmp	not_detected
 
 alarm_sound:
-.equ	BUZLOOP1 = 1
-.equ	BUZLOOP2 = 1
-	ldi	loopCt, 60
-alarm_oloop:
-	ldi	iLoopRl,LOW(BUZLOOP1)	; intialize inner loop count in inner
-	ldi	iLoopRh,HIGH(BUZLOOP1)	; loop high and low registers
-	sbi	PORTB, BUZZER
-alarm_iloop:
-	sbiw	iLoopRl,1		; decrement inner loop registers
-	brne	alarm_iloop
-	
-	cbi	PORTB, BUZZER
-	ldi	iLoopRl,LOW(BUZLOOP2)	; intialize inner loop count in inner
-	ldi	iLoopRh,HIGH(BUZLOOP2)	; loop high and low registers
-alarm_iloop_2:
-	sbiw	iLoopRl,1		; decrement inner loop registers
-	brne	alarm_iloop_2
 
-	dec	loopCt
-	brne	alarm_oloop
-	nop
+	ldi	loopCt, 15
+ alarm_oloop:
+	sbi	PORTB, BUZZER
+	;nop
+	cbi	PORTB, BUZZER
+ 	dec	loopCt
+ 	brne	alarm_oloop
+ 	nop
 
 	rcall	sleep_2s
 	rjmp	detect_again
