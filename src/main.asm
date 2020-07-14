@@ -40,6 +40,7 @@ setup:
 main:
 	rcall	checksensor
 	brbs	SREG_C, first_detected_wait
+
 not_detected:
 	rcall	sleep_8s
 	rjmp	main
@@ -53,16 +54,14 @@ detect_again:
 	rjmp	not_detected
 
 alarm_sound:
-
 	ldi	loopCt, 15
- alarm_oloop:
+alarm_oloop:
 	sbi	PORTB, BUZZER
 	;nop
 	cbi	PORTB, BUZZER
  	dec	loopCt
  	brne	alarm_oloop
  	nop
-
 	rcall	sleep_2s
 	rjmp	detect_again
 
@@ -100,8 +99,10 @@ sleep_8s:
 checksensor:
 ;	sets carry bit if light detected
 	sbi	PORTB,SENS_PWR
-	ldi	loopCt, 1
-	rcall	delay
+	ldi	loopCt, 6
+checksensor_loop:
+	dec	loopCt
+	brne	checksensor_loop
 	clc
 	sbic	PINB,SENS_IN
 	sec
@@ -125,18 +126,8 @@ WDT_off:
 	sei
 	ret
 
-delay:
-	ldi	iLoopRl,LOW(10)		; intialize inner loop count in inner
-	ldi	iLoopRh,HIGH(10)	; loop high and low registers
-iLoop:	sbiw	iLoopRl,1		; decrement inner loop registers
-	brne	iLoop			; branch to iLoop if iLoop registers != 0
-	dec	loopCt			; decrement outer loop register
-	brne	delay			; branch to oLoop if outer loop register != 0
-	nop				; no operation
-	ret				; return from subroutine
 ; Interrupt service routines
 ; -----------------------------------------------------------------------------
-
 
 ; watchdog
 WDT_isr:
